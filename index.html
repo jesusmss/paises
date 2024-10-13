@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=0.1"/>
+	<title></title>
+	<style type="text/css">
+		
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.principal{
+			display: flex;
+			flex-wrap:wrap;
+			padding: 30px 10px 0;
+		}
+		.formularios{
+			padding: 30px 0 0 40px;
+		}
+		form{
+			margin-top: 20px;
+		}
+		div{
+			width:150px;
+		/*	height: 150px; */
+			padding:20px;
+			border-radius:5%;
+			box-shadow: 2px 2px 2px 2px rgba(10,10,10,0.7);
+			margin: 20px;
+			transition: transform 0.7s;
+		/*	border:2px solid black;  */
+		}
+		div:not(.grande, .innerDiv):hover{
+			transform: scale(1.2) rotate(5deg);
+			cursor: pointer;
+		}
+		img{
+			width:100%;
+			border-radius:7%;
+			margin-bottom:10px;
+			box-shadow: 2px 2px 7px -3px rgba(10,10,10,0.7);
+		}
+		.apagado{
+			display: none;
+		}
+		.activo{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: rgba(20,20,20,0.7);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.grande{
+			width: 300px;
+			min-height: 300px;
+			background-color: white;
+		}
+		.innerDiv{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			padding:  0;
+    		box-shadow:none;
+    		margin: 15px 0 0;
+		}
+		button{
+			cursor: pointer;
+			padding: 5px;
+			background-color: transparent;
+			border: 1px solid black;
+			border-radius: 15%;
+			text-decoration: none;
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<section class="formularios">
+		<p>Busqueda:</p>
+		<input type="text" name="buscapais" placeholder="busque el país">
+		<form method="POST" action="paises.php">
+			<p>Crear:</p>
+			<input type="text" name="nuevopais" placeholder="pais, capital">
+			<p class="warning apagado">Dos valores separados por comas</p>
+		</form>
+	</section>
+	<section class="principal">
+		
+	</section>
+	<section class="modal"></section>
+	<script src="funciones.js"></script>
+</body>
+</html>
